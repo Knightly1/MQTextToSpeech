@@ -5,7 +5,7 @@ Uses Microsoft's Speech API to provide text to speech options for outputting spe
 ## Getting Started
 
 ```txt
-/plugin MQTextToSpeech
+/plugin TextToSpeech
 /tts say If you give a man a fire he's warm for a day.  But if you set a man on fire, he's warm for the rest of his life.
 /mqsettings plugins/TextToSpeech
 ```
