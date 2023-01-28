@@ -76,6 +76,7 @@
     <ClCompile Include="MQTextToSpeech.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="contrib\knightlog\knightlog.h" />
     <ClInclude Include="resource.h" />
   </ItemGroup>
   <ItemGroup>

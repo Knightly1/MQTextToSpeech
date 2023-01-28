@@ -1,0 +1,4 @@
+[submodule "contrib/knightlog"]
+	path = contrib/knightlog
+	url = https://github.com/Knightly1/knightlog.git
+	branch = main
