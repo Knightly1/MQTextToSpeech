@@ -10,10 +10,7 @@
 #include <wil/registry.h>
 #include <imgui/ImGuiUtils.h>
 
-#pragma warning(push)
-#pragma warning(disable : 4996)
-#include <sphelper.h>
-#pragma warning(pop)
+#include "contrib/sphelper_stub.h"
 
 PreSetup("MQTextToSpeech");
 PLUGIN_VERSION(1.0);
@@ -436,22 +433,22 @@ PLUGIN_API void InitializePlugin()
 {
 	DebugSpewAlways("MQTextToSpeech::Initializing version %f", MQ2Version);
 
+	knightlog = new KnightLog("\a#7BACDD[\a#B93CF6%n\ax]\ax %^%L\ax \a#808080::\ax %^%v\ax");
+	UNUSED(knightlog->SetColorByLevel(
+		{
+					{spdlog::level::trace,    "#FF00FF"},
+					{spdlog::level::debug,    "#FF8C00"},
+					{spdlog::level::info,     "#00E0E0"},
+					{spdlog::level::warn,     "#FFD700"},
+					{spdlog::level::err,      "#F22613"},
+					{spdlog::level::critical, "#F22613"}
+				}));
+
 	if (SUCCEEDED(CoInitialize(nullptr)))
 	{
 		voice_com = CoCreateInstance(CLSID_SpVoice, nullptr, CLSCTX_ALL, IID_ISpVoice, reinterpret_cast<void**>(&voice_ptr));
 		if(SUCCEEDED(voice_com))
 		{
-			knightlog = new KnightLog("\a#7BACDD[\a#B93CF6%n\ax]\ax %^%L\ax \a#808080::\ax %^%v\ax");
-			UNUSED(knightlog->SetColorByLevel(
-				{
-							{spdlog::level::trace,    "#FF00FF"},
-							{spdlog::level::debug,    "#FF8C00"},
-							{spdlog::level::info,     "#00E0E0"},
-							{spdlog::level::warn,     "#FFD700"},
-							{spdlog::level::err,      "#F22613"},
-							{spdlog::level::critical, "#F22613"}
-						}));
-
 			RePopulateVoices();
 			LoadSettings();
 

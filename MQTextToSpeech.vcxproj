@@ -77,6 +77,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="contrib\knightlog\knightlog.h" />
+    <ClInclude Include="contrib\sphelper_stub.h" />
     <ClInclude Include="resource.h" />
   </ItemGroup>
   <ItemGroup>
