@@ -2,6 +2,7 @@
 #define SPDLOG_ACTIVE_LEVEL SPDLOG_LEVEL_TRACE
 #define SPDLOG_EOL ""
 #include <mq/Plugin.h>
+#include <mq/base/WString.h>
 #include "contrib/knightlog/knightlog.h"
 
 #include <sapi.h>
