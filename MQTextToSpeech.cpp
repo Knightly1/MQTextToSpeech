@@ -6,7 +6,7 @@
 #include "contrib/knightlog/knightlog.h"
 
 #include <sapi.h>
-#include <wil/resource.h>
+#include <extras/wil/Constants.h>
 #include <wil/result.h>
 #include <wil/registry.h>
 #include <imgui/ImGuiUtils.h>
